@@ -7,7 +7,7 @@
       </li>
     </ul>
 
-    <div v-bind:class="{ alert: showAlert, 'another-class': showClass }"></div>
+    <div v-bind:class="alertObject"></div>
   </div>
 </template>
 
@@ -17,8 +17,9 @@ export default {
   data() {
     return {
       skills: [{ skill: "vuejs" }, { skill: "front end dev" }],
-      showAlert: true,
-      showClass: true
+      alertObject: {
+        alert: true
+      }
     };
   }
 };
