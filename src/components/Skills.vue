@@ -3,6 +3,8 @@
     <!-- vue interpolation -->
     {{ name }}
 
+    {{ btnState ? "Button is disabled" : "Button is enabled" }}
+
     <!-- v-on:click is a vue directive -->
     <button v-on:click="changeName" v-bind:disabled="btnState">
       Change Name
