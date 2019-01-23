@@ -7,7 +7,7 @@
       </li>
     </ul>
 
-    <div v-bind:class="{ alert: showAlert }"></div>
+    <div v-bind:class="{ alert: showAlert, 'another-class': showClass }"></div>
   </div>
 </template>
 
@@ -17,7 +17,8 @@ export default {
   data() {
     return {
       skills: [{ skill: "vuejs" }, { skill: "front end dev" }],
-      showAlert: true
+      showAlert: true,
+      showClass: true
     };
   }
 };
@@ -29,5 +30,8 @@ export default {
   background-color: yellow;
   width: 100%;
   height: 30px;
+}
+.another-class {
+  border: 5px solid black;
 }
 </style>
