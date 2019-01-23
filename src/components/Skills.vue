@@ -2,6 +2,11 @@
   <div class="hello">
     <!-- vue interpolation -->
     {{ name }}
+
+    <!-- v-on:click is a vue directive -->
+    <button v-on:click="changeName" v-bind:disabled="btnState">
+      Change Name
+    </button>
   </div>
 </template>
 
@@ -10,7 +15,8 @@ export default {
   name: "Skills",
   data() {
     return {
-      name: "Name"
+      name: "Name",
+      btnState: true
     };
   }
 };
