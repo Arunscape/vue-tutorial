@@ -1,14 +1,11 @@
 <template>
   <div class="hello">
-    <!-- vue interpolation -->
-    {{ name }}
-
-    {{ btnState ? "Button is disabled" : "Button is enabled" }}
-
-    <!-- v-on:click is a vue directive -->
-    <button v-on:click="changeName" v-bind:disabled="btnState">
-      Change Name
-    </button>
+    <div class="holder"></div>
+    <ul>
+      <li v-for="(data, index) in skills" :key="index">
+        {{ index }}. {{ data.skill }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -17,8 +14,7 @@ export default {
   name: "Skills",
   data() {
     return {
-      name: "Name",
-      btnState: true
+      skills: [{ skill: "vuejs" }, { skill: "front end dev" }]
     };
   }
 };
