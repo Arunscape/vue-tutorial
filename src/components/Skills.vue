@@ -7,7 +7,13 @@
       </li>
     </ul>
 
-    <div v-bind:class="alertObject"></div>
+    <div
+      v-bind:style="{
+        backgroundColor: bgColor,
+        width: bgWidth,
+        height: bgHeight
+      }"
+    ></div>
   </div>
 </template>
 
@@ -17,9 +23,9 @@ export default {
   data() {
     return {
       skills: [{ skill: "vuejs" }, { skill: "front end dev" }],
-      alertObject: {
-        alert: true
-      }
+      bgColor: "yellow",
+      bgWidth: "100%",
+      bhHeight: "30px"
     };
   }
 };
