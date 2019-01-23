@@ -7,8 +7,7 @@
       </li>
     </ul>
 
-    <p v-if="skills.length >= 1">You have 1 or more skills</p>
-    <p v-else>Really???</p>
+    <div v-bind:class="{ alert: showAlert }"></div>
   </div>
 </template>
 
@@ -17,11 +16,18 @@ export default {
   name: "Skills",
   data() {
     return {
-      skills: [{ skill: "vuejs" }, { skill: "front end dev" }]
+      skills: [{ skill: "vuejs" }, { skill: "front end dev" }],
+      showAlert: true
     };
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style src="./Skills.css" scoped></style>
+<style scoped>
+.alert {
+  background-color: yellow;
+  width: 100%;
+  height: 30px;
+}
+</style>
