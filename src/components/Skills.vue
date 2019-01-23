@@ -6,6 +6,9 @@
         {{ index }}. {{ data.skill }}
       </li>
     </ul>
+
+    <p v-if="skills.length >= 1">You have 1 or more skills</p>
+    <p v-else>Really???</p>
   </div>
 </template>
 
