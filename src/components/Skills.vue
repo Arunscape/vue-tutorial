@@ -4,6 +4,7 @@
 
     <form @submit.prevent="addSkill">
       <input type="text" placeholder="Enter a skill" v-model="skill" />
+      <input type="checkbox" id="checkbox" v-model="checked" />
     </form>
     <ul>
       <li v-for="(data, index) in skills" :key="index">
@@ -20,6 +21,7 @@ export default {
   name: "Skills",
   data() {
     return {
+      checked: false,
       skill: "",
       skills: [{ skill: "vuejs" }, { skill: "front end dev" }]
     };
@@ -28,6 +30,7 @@ export default {
     addSkill() {
       this.skills.push({ skill: this.skill });
       this.skill = "";
+      console.log("the checkbox value is " + this.checked);
     }
   }
 };
