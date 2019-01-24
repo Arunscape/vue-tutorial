@@ -1,6 +1,10 @@
 <template>
   <div class="hello">
     <div class="holder"></div>
+
+    <form @submit.prevent="addSkill">
+      <input type="text" placeholder="Enter a skill" v-model="skill" />
+    </form>
     <ul>
       <li v-for="(data, index) in skills" :key="index">
         {{ data.skill }}
@@ -16,11 +20,15 @@ export default {
   name: "Skills",
   data() {
     return {
-      skills: [{ skill: "vuejs" }, { skill: "front end dev" }],
-      bgColor: "yellow",
-      bgWidth: "100%",
-      bhHeight: "30px"
+      skill: "",
+      skills: [{ skill: "vuejs" }, { skill: "front end dev" }]
     };
+  },
+  methods: {
+    addSkill() {
+      this.skills.push({ skill: this.skill });
+      this.skill = "";
+    }
   }
 };
 </script>
